@@ -11,7 +11,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="batchcreate",
-    version="0.1.1",
+    version="0.1.2",
     description="Demo batching library",
     long_description=long_description,
     long_description_content_type="text/markdown",
