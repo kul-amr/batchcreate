@@ -1,7 +1,7 @@
 import unittest
 import logging
 import sys
-from batching import BatchCreator
+from batchcreate import BatchCreator
 
 logger = logging.getLogger(__name__)
 

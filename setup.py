@@ -10,7 +10,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name="batching",
+    name="batchcreate",
     version="0.1.0",
     description="Demo batching library",
     long_description=long_description,
@@ -19,7 +19,7 @@ setup(
     author="Amruta K",
     author_email="",
     license="",
-    packages=["batching"],
+    packages=["batchcreate"],
     include_package_data=True,
     install_requires=[],
     test_suite='tests',
