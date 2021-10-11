@@ -11,7 +11,7 @@ Quick start:
 
    - max_record_size=1MB
 
-      The maximum size limit for a record in the output batch. Any record with large size this will be skipped from batching. 
+      The maximum size limit for a record in the output batch. Any record with larger size than this will be skipped from batching. 
    
    - max_batch_size=5MB
 
@@ -29,7 +29,7 @@ Quick start:
                            max_batch_size=200,
                            max_batch_num_records=4)
 
-3.The iterable BatchCreator object can give suitable batches as needed on iteration. The BatchCreator object can be used in regular for loop.
+3.The iterable BatchCreator object can give suitable batches as needed on iteration. The BatchCreator object can be used in regular 'for' loop.
 
     for batch in batches:
         print(batch) #batch processing here
