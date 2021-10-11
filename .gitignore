@@ -8,6 +8,7 @@ build/
 *.egg-info/
 dist/
 
+docs/_*
 
 htmlcov/
 .tox/
