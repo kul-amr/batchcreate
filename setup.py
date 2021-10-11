@@ -11,11 +11,11 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="batchcreate",
-    version="0.1.4",
+    version="0.1.5",
     description="Demo batchcreate library",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://batchcreate.readthedocs.io/",
     author="Amruta K",
     author_email="",
     license="",

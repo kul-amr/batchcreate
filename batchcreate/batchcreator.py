@@ -76,7 +76,7 @@ class BatchCreator:
         self.max_batch_size = max_batch_size
         self.max_batch_num_records = max_batch_num_records
 
-    def _get_batch_size(self):
+    def _get_batch_size(self) -> int:
         """
         Gets the size of a batch.
 
@@ -84,7 +84,7 @@ class BatchCreator:
         """
         return sys.getsizeof(self.batch)
 
-    def _get_batch_num_records(self):
+    def _get_batch_num_records(self) -> int:
         """
         Gets the number of records of a batch.
 
@@ -92,7 +92,7 @@ class BatchCreator:
         """
         return len(self.batch)
 
-    def _get_record_size(self, record):
+    def _get_record_size(self, record: str) -> int:
         """
         Gets the size of a given record.
 
@@ -101,7 +101,7 @@ class BatchCreator:
         """
         return sys.getsizeof(record)
 
-    def _validate_batch_size(self, record):
+    def _validate_batch_size(self, record: str) -> bool:
         """
         Checks if the current batch size will be less than the max_batch_size limit
         upon adding the new record. Returns True if less than max_batch_size else False.
@@ -112,7 +112,7 @@ class BatchCreator:
         new_batch_size = (self._get_batch_size() + self._get_record_size(record))
         return new_batch_size < self.max_batch_size
 
-    def _validate_batch_num_records(self):
+    def _validate_batch_num_records(self) -> bool:
         """
         Checks if the number of records in the batch are less than the
         max_batch_num_records limit.
@@ -121,7 +121,7 @@ class BatchCreator:
         """
         return self._get_batch_num_records() < self.max_batch_num_records
 
-    def _validate_record_size(self, record):
+    def _validate_record_size(self, record: str) -> bool:
         """
         Checks if the size of the record is less than the max_record_size limit.
 
@@ -169,7 +169,7 @@ class BatchCreator:
         self.iter_records = None
         return batch
 
-    def batches(self):
+    def batches(self) -> list[list[str]]:
         """
         Creates a list of batches by iterating over BatchCreator iterator.
 
