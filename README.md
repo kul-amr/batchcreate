@@ -43,3 +43,8 @@ Quick start:
 4.BatchCreator can return the list of all the batches as well.
 
     batches = BatchCreator(records).batches()
+
+Docs:
+
+batchcreate (https://pypi.org/project/batchcreate/)
+(https://batchcreate.readthedocs.io/en/latest/)
