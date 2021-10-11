@@ -3,22 +3,54 @@ import sys
 
 class BatchCreator:
     """
-    Instantiate a batching operation. The array input data will be split into batches
-    of required batch size consisting of records of given size.
+    Batchcreator takes an array of records as input and splits it into
+    suitably sized batches of records which can be further processed or
+    passed to any other system/s.
+    Import BatchCreator iterator class and instantiate it. You can use
+    below parameters to define output batch limits. These parameters are
+    optional. If neither of these parameters is specified then the default
+    value will be used.
+
+    Example:
+            from batchcreate import BatchCreator
+
+            batches = BatchCreator(records,
+                               max_record_size=60,
+                               max_batch_size=200,
+                               max_batch_num_records=4)
+
+    The iterable BatchCreator object can give suitable batches as needed
+    on iteration. The BatchCreator object can be used in regular 'for' loop.
+
+            for batch in batches:
+                print(batch) #batch processing here
+                print('\n')
+
+    OR
+
+            batchItr = iter(batches)
+            print(next(batchItr)) #batch processing here
+
 
     Attributes:
         records : []
             Input list of records to split into batches.
-        max_record_size : int
-            The maximum size limit for a record.
-        max_batch_size : int
+        max_record_size : int, default 1MB
+            The maximum size limit for a record in the output batch.
+            Any record with larger size than this will be skipped from batching.
+        max_batch_size : int, default 5MB
             The maximum size limit for a batch.
-        max_batch_num_records : int
-            The maximum number of records limit for a batch.
+        max_batch_num_records : int, default 500
+            The maximum number of records limit for a batch. BatchCreator will
+            put maximum these many records per batch provided batch size satisfies
+            the limit.
 
     Methods:
         batches :
-            Lists batches created.
+            Returns the list of all the batches.
+
+            Example:
+                batches = BatchCreator(records).batches()
     """
 
     def __init__(
