@@ -29,7 +29,7 @@ Quick start:
                            max_batch_size=200,
                            max_batch_num_records=4)
 
-3.The iterable BatchCreator object can give suitable batches as needed on iteration. The BatchCreator object can be used in regular 'for' loop.
+3.The iterable BatchCreator object can give suitable batches as needed on iteration. The BatchCreator object can be used in a regular 'for' loop.
 
     for batch in batches:
         print(batch) #batch processing here

@@ -8,7 +8,7 @@ Welcome to BatchCreate's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: BatchCreate:
 
    source/api/batchcreate
 

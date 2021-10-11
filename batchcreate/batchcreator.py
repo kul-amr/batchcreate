@@ -11,7 +11,8 @@ class BatchCreator:
     optional. If neither of these parameters is specified then the default
     value will be used.
 
-    Example:
+    Example::
+
             from batchcreate import BatchCreator
 
             batches = BatchCreator(records,
@@ -20,13 +21,16 @@ class BatchCreator:
                                max_batch_num_records=4)
 
     The iterable BatchCreator object can give suitable batches as needed
-    on iteration. The BatchCreator object can be used in regular 'for' loop.
+    on iteration. The BatchCreator object can be used in a regular 'for' loop.
+
+    Example::
 
             for batch in batches:
                 print(batch) #batch processing here
-                print('\n')
 
     OR
+
+    Example::
 
             batchItr = iter(batches)
             print(next(batchItr)) #batch processing here
@@ -48,9 +52,6 @@ class BatchCreator:
     Methods:
         batches :
             Returns the list of all the batches.
-
-            Example:
-                batches = BatchCreator(records).batches()
     """
 
     def __init__(
@@ -173,5 +174,8 @@ class BatchCreator:
         Creates a list of batches by iterating over BatchCreator iterator.
 
         :return: List of batches.
+        Example::
+
+                batches = BatchCreator(records).batches()
         """
         return list(iter(self))
