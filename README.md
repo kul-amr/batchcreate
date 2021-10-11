@@ -46,5 +46,6 @@ Quick start:
 
 Docs:
 
-[batchcreate](https://pypi.org/project/batchcreate/)
-[Batchcreate Documentation](https://batchcreate.readthedocs.io/en/latest/)
+Library available at : [batchcreate](https://pypi.org/project/batchcreate/)
+
+Documentation at : [Batchcreate Documentation](https://batchcreate.readthedocs.io/en/latest/)
