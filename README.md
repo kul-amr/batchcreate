@@ -2,38 +2,34 @@ batchcreator.py takes an array of records as input and splits it into suitably s
 
 Quick start:
 
-1. Install:
+1.Install:
 
     $ pip install batching
 
-
-2. Import BatchCreator iterator class and instantiate it. You can use below parameters to define output batch limits: 
+2.Import BatchCreator iterator class and instantiate it. You can use below parameters to define output batch limits: 
 
 
    i. max_record_size: The maximum size limit for a record in the output batch. Any record with large size this will be skipped from batching. 
-
-  ii. max_batch_size: The maximum size limit for a batch. 
-
-  iii. max_batch_num_records: The maximum number of records limit for a batch. BatchCreator will put maximum these many records per batch provided batch size satisfies the limit.
-
+   
+   ii. max_batch_size: The maximum size limit for a batch. 
+   
+   iii. max_batch_num_records: The maximum number of records limit for a batch. BatchCreator will put maximum these many records per batch provided batch size satisfies the limit. 
+   
    These parameters are optional. If neither of these parameters is specified then the default values will be used. The default limits as :
-   max_record_size=1MB,
-   max_batch_size=5MB,
+   
+   max_record_size=1MB, 
+
+   max_batch_size=5MB, 
+
    max_batch_num_records=500
 
-
-   eg. 
    
     batches = BatchCreator(records,
                            max_record_size=60,
                            max_batch_size=200,
                            max_batch_num_records=4)
 
-3. The iterable BatchCreator object can give suitable batches as needed on iteration.
-   The BatchCreator object can be used in regular for loop.
-   
-
-  eg. 
+3.The iterable BatchCreator object can give suitable batches as needed on iteration. The BatchCreator object can be used in regular for loop.
 
     for batch in batches:
         print(batch) #batch processing here
@@ -44,8 +40,6 @@ Quick start:
     batchItr = iter(batches)
     print(next(batchItr)) #batch processing here
 
-4. BatchCreator can return the list of all the batches as well.
-   
-   eg.
-        
-       batches = BatchCreator(records).batches()
+4.BatchCreator can return the list of all the batches as well.
+
+    batches = BatchCreator(records).batches()
